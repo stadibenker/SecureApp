@@ -27,6 +27,8 @@ namespace SecureApp.Pages.Account
 					new Claim(ClaimTypes.Name, "admin"),
 					new Claim(ClaimTypes.Email, "t@g.c"),
 					new Claim("Admin", "true"),
+					new Claim("Department", "HR"),
+					new Claim("StartedDate", "2024-06-01"),
 				};
 
 				var identity = new ClaimsIdentity(claims, "CookieAuth");

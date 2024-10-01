@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
+using SecureApp.Authorization;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,9 +13,14 @@ builder.Services.AddAuthentication("CookieAuth").AddCookie("CookieAuth", options
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("HrOnly", policy => policy.RequireClaim("Department", "HR"));
+    options.AddPolicy("HrOnly", policy => policy
+        .RequireClaim("Department", "HR")
+        .Requirements.Add(new HrManagerProbationRequirement(3))
+    );
 	options.AddPolicy("AdminOnly", policy => policy.RequireClaim("Admin"));
 });
+
+builder.Services.AddSingleton<IAuthorizationHandler, HrManagerProbationRequirementHandler>();
 
 var app = builder.Build();
 
