@@ -34,7 +34,12 @@ namespace SecureApp.Pages.Account
 				var identity = new ClaimsIdentity(claims, "CookieAuth");
 				ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
-				await HttpContext.SignInAsync("CookieAuth", claimsPrincipal);
+				var authProperties = new AuthenticationProperties
+				{
+					IsPersistent = Credential.RememberMe
+				};
+
+				await HttpContext.SignInAsync("CookieAuth", claimsPrincipal, authProperties);
 
 				return RedirectToPage("/Index");
 			}
