@@ -20,7 +20,7 @@ namespace SecureApp.Pages.Account
 			if (!ModelState.IsValid)
 				return Page();
 
-			if (Credential.UserName == "admin" && Credential.Password == "password")
+			if (ValidateCredentials(Credential))
 			{
 				var claims = new List<Claim>
 				{
@@ -45,6 +45,11 @@ namespace SecureApp.Pages.Account
 			}
 
 			return Page();
+		}
+
+		private bool ValidateCredentials(Credential credential)
+		{
+			return credential.UserName == "admin" && credential.Password == "password";
 		}
 	}
 }

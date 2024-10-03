@@ -22,6 +22,10 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddSingleton<IAuthorizationHandler, HrManagerProbationRequirementHandler>();
+builder.Services.AddHttpClient("SecureApi", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5032/");
+});
 
 var app = builder.Build();
 
