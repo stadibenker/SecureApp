@@ -32,7 +32,7 @@ namespace SecureApi.Controllers
 					new Claim("StartedDate", "2024-06-01"),
 				};
 
-				var expiresAt = DateTime.Now.AddMinutes(15);
+				var expiresAt = DateTime.Now.AddSeconds(15);
 
 				return Ok(new
 				{
