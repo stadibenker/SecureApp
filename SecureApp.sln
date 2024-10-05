@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureApp", "SecureApp\Secu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureApi", "SecureApi\SecureApi.csproj", "{DB4DED09-397C-424F-9029-D8CEBC62EEC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{E9C3A27F-FAE1-41DC-9F65-954600937B76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DB4DED09-397C-424F-9029-D8CEBC62EEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB4DED09-397C-424F-9029-D8CEBC62EEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB4DED09-397C-424F-9029-D8CEBC62EEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9C3A27F-FAE1-41DC-9F65-954600937B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9C3A27F-FAE1-41DC-9F65-954600937B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9C3A27F-FAE1-41DC-9F65-954600937B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9C3A27F-FAE1-41DC-9F65-954600937B76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
