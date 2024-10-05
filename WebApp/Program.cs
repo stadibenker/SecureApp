@@ -19,6 +19,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 	options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
 
 	options.User.RequireUniqueEmail = true;
+	options.SignIn.RequireConfirmedEmail = true;
 }).AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.ConfigureApplicationCookie(options =>
