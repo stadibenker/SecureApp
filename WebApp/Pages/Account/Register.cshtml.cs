@@ -36,7 +36,9 @@ namespace WebApp.Pages.Account
 
             if (result.Succeeded) 
             {
-                return RedirectToPage("Account/Login");
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
+                return RedirectToPage("/Account/ConfirmEmail", new { userId = user.Id, token });
             }
             else
             {
