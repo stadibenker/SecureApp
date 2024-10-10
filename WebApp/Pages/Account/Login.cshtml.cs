@@ -1,18 +1,19 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using WebApp.Data.Account;
 using WebApp.Models;
 
 namespace WebApp.Pages.Account
 {
     public class LoginModel : PageModel
     {
-		private readonly SignInManager<IdentityUser> _signInManager;
+		private readonly SignInManager<User> _signInManager;
 
 		[BindProperty]
         public CredentialVM Credential { get; set; } = new CredentialVM();
 
-		public LoginModel(SignInManager<IdentityUser> signInManager)
+		public LoginModel(SignInManager<User> signInManager)
 		{
 			_signInManager = signInManager;
 		}
